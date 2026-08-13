@@ -9,7 +9,6 @@ def solution(s):
         else:
             stack.append(ch)
 
-
     return 1 if not stack else 0
 
 print(solution('baabaa'))
