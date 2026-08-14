@@ -1,3 +1,5 @@
+##
+
 def solution(N):
     # Implement your solution here
     num = bin(N)[2:]

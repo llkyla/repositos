@@ -1,4 +1,5 @@
 ##
+
 def solution(A, K):
     n = len(A)
     if n == 0:
