@@ -24,18 +24,22 @@ def solution(S, P, Q):
     N = len(S)
     M = len(P)
 
+    # len N+1 str for each nucleotides
+    # why N+1 not N? to let [0] as yet reading status
     prefixA = [0] * (N + 1)
     prefixC = [0] * (N + 1)
     prefixG = [0] * (N + 1)
     prefixT = [0] * (N + 1)
 
+    # prefixA[i] := from S to S[i-1], how many A appeared
     for i in range(N):
         prefixA[i + 1] = prefixA[i] + (1 if S[i] == 'A' else 0)
         prefixC[i + 1] = prefixC[i] + (1 if S[i] == 'C' else 0)
         prefixG[i + 1] = prefixG[i] + (1 if S[i] == 'G' else 0)
         prefixT[i + 1] = prefixT[i] + (1 if S[i] == 'T' else 0)
 
-    answers = [0] * M
+    answers = [0] * M # rather than append
+
     for k in range(M):
         p, q = P[k], Q[k]
         if prefixA[q + 1] - prefixA[p] > 0:
