@@ -2,10 +2,12 @@
 
 def solution(A):
     # Implement your solution here
-    tot_sum = 0
-    for i in range(1, max(A)+1):
-        tot_sum += i
-    return 1 if tot_sum == sum(A) else 0
+    n = len(A)
+    if len(set(A)) != n: # after changing in to set, len diff = ∃ repeated element
+        return 0
+    if max(A) != n: # max(A) = len guarantees permutation after checking repeated ones 
+        return 0
+    return 1
 
 print(solution([4, 1, 3, 2]))
 print(solution([4, 1, 3]))
