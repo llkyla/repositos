@@ -1,0 +1,12 @@
+# 1915
+
+def f(n):
+    if n == 0:
+            return 0
+    elif n == 1:
+            return 1
+    # Recursive case
+    return f(n - 1) + f(n - 2)
+
+n = int(input())
+print(f(n))
